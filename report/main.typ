@@ -2,7 +2,7 @@
 #let accent = rgb("#187c80")
 #let pale = rgb("#edf4f5")
 #let muted = rgb("#536475")
-#set document(title: "Prog5 — UNO Q Climate Station", author: "Name / student number")
+#set document(title: "Prog5 — UNO Q Climate Station", author: "Brandon Gesterkamp")
 #set page(
   paper: "a4",
   margin: (x: 23mm, top: 20mm, bottom: 20mm),
@@ -49,7 +49,7 @@
 #v(10mm)
 #table(
   columns: (34mm, 1fr),
-  [*Student*], [Name / student number],
+  [*Student*], [Brandon Gesterkamp · 2116644],
   [*Course*], [Programming 5 — P1 lab assignments],
   [*Platform*], [Arduino UNO Q · STM32 + onboard Debian],
   [*Sensor*], [Bosch BMP280 · temperature and pressure],
@@ -501,7 +501,7 @@ transport and generates input for the same sampling and publication path.
   [8], [Design review, before/after register encoding and regression checks in @sec-review.],
 )
 
-Before submission, enter the student details, confirm the platform substitution,
+Before submission, confirm the platform substitution,
 add the wiring photograph and physical sensor/motor results, then rebuild the
 report. Submit through Classroom or the agreed Git repository and give
 `jakorten` access. Include the source, tests, UML, report and relevant captures.
