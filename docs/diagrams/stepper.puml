@@ -1,0 +1,26 @@
+@startuml
+skinparam monochrome true
+skinparam classAttributeIconSize 0
+interface StepperIo {
+ +begin()
+ +direction(forward)
+ +step(high)
+ +delayUs(duration)
+}
+class Stepper {
+ +begin()
+ +move(signedSteps): bool
+ +position(): int64
+}
+class ArduinoStepperIo {
+ stepPin
+ directionPin
+}
+Stepper o--> StepperIo : borrows
+ArduinoStepperIo ..|> StepperIo
+note bottom of Stepper
+ Blocking STEP/DIR pulses.
+ Position means commanded steps;
+ no encoder, homing or acceleration.
+end note
+@enduml

@@ -1,0 +1,16 @@
+-- Configuring done (0.1s)
+-- Generating done (0.2s)
+-- Build files have been written to: /home/arduino/prog5-check-tRP6ZQ/build
+[  8%] Built target stepper_core
+[ 21%] Built target sensor_core
+[ 26%] Building CXX object CMakeFiles/matrix_text.dir/src/MatrixText.cpp.o
+[ 39%] Built target station_support
+[ 47%] Built target uno_q_platform
+[ 52%] Linking CXX static library libmatrix_text.a
+[ 60%] Built target mqtt_publisher
+[ 60%] Built target matrix_text
+[ 69%] Built target station
+[ 73%] Building CXX object CMakeFiles/unit_tests.dir/tests/test_main.cpp.o
+[ 78%] Building CXX object CMakeFiles/unit_tests.dir/tests/test_matrix.cpp.o
+[ 82%] Linking CXX executable unit_tests
+[100%] Built target unit_tests

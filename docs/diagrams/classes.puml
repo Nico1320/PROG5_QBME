@@ -1,0 +1,38 @@
+@startuml
+top to bottom direction
+skinparam monochrome true
+skinparam classAttributeIconSize 0
+hide empty members
+interface EnvironmentSensor {
+ +init(): Error
+ +readForced(out): Error
+}
+interface I2cBus {
+ +read(...): bool
+ +write(...): bool
+}
+interface Clock {
+ +delayUs(us)
+}
+class Bmp280
+class FakeSensor
+class BmpCalibration
+class ArduinoI2cBus
+class RouterI2cBus
+class ArduinoClock
+class SystemClock
+EnvironmentSensor <|.. Bmp280
+EnvironmentSensor <|.. FakeSensor
+Bmp280 o-left-> I2cBus : borrows
+Bmp280 o-right-> Clock : borrows
+Bmp280 *-down- BmpCalibration : owns
+I2cBus <|.. ArduinoI2cBus
+I2cBus <|.. RouterI2cBus
+Clock <|.. ArduinoClock
+Clock <|.. SystemClock
+note bottom of BmpCalibration
+ Only calibration is owned.
+ Bus and clock outlive Bmp280.
+ No platform includes in core.
+end note
+@enduml

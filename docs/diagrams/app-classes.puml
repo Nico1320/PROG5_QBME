@@ -1,0 +1,28 @@
+@startuml
+top to bottom direction
+skinparam monochrome true
+skinparam classAttributeIconSize 0
+hide empty members
+class Sampler {
+ +start()
+ +stop()
+}
+interface EnvironmentSensor
+class "std::thread" as Thread
+interface Publisher {
+ +publish(...): bool
+}
+class ConsolePublisher
+class MqttPublisher
+class MqttRuntime
+Sampler o-left-> EnvironmentSensor : borrows
+Sampler *-down- Thread : owns / joins
+Sampler .right.> Publisher : callback
+Publisher <|.. ConsolePublisher
+Publisher <|.. MqttPublisher
+MqttPublisher ..> MqttRuntime : uses
+note bottom of Thread
+ main() owns the sensor,
+ sampler and publisher.
+end note
+@enduml

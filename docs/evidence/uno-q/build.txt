@@ -1,0 +1,27 @@
+[ 10%] Building CXX object CMakeFiles/sensor_core.dir/src/Hal.cpp.o
+[ 10%] Building CXX object CMakeFiles/stepper_core.dir/src/Stepper.cpp.o
+[ 15%] Building CXX object CMakeFiles/sensor_core.dir/src/Bmp280.cpp.o
+[ 20%] Linking CXX static library libstepper_core.a
+[ 20%] Built target stepper_core
+[ 25%] Linking CXX static library libsensor_core.a
+[ 25%] Built target sensor_core
+[ 35%] Building CXX object CMakeFiles/station_support.dir/app/Publisher.cpp.o
+[ 35%] Building CXX object CMakeFiles/uno_q_platform.dir/platform/uno_q/UnoQPlatform.cpp.o
+[ 40%] Building CXX object CMakeFiles/station_support.dir/app/Sampler.cpp.o
+[ 45%] Linking CXX static library libstation_support.a
+[ 45%] Built target station_support
+[ 50%] Building CXX object CMakeFiles/mqtt_publisher.dir/app/MqttPublisher.cpp.o
+[ 55%] Linking CXX static library libmqtt_publisher.a
+[ 55%] Built target mqtt_publisher
+[ 60%] Linking CXX static library libuno_q_platform.a
+[ 60%] Built target uno_q_platform
+[ 70%] Building CXX object CMakeFiles/station.dir/app/main.cpp.o
+[ 70%] Building CXX object CMakeFiles/unit_tests.dir/tests/test_main.cpp.o
+[ 75%] Building CXX object CMakeFiles/unit_tests.dir/tests/test_sensor.cpp.o
+[ 80%] Linking CXX executable station
+[ 85%] Building CXX object CMakeFiles/unit_tests.dir/tests/test_stepper.cpp.o
+[ 85%] Built target station
+[ 90%] Building CXX object CMakeFiles/unit_tests.dir/tests/test_app.cpp.o
+[ 95%] Building CXX object CMakeFiles/unit_tests.dir/tests/test_router.cpp.o
+[100%] Linking CXX executable unit_tests
+[100%] Built target unit_tests

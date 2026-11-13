@@ -1,0 +1,7 @@
+/build*/
+/report/preview-*.png
+/.arduino-user/
+/board-evidence/
+*.o
+*.a
+.DS_Store

@@ -1,0 +1,45 @@
+@startuml
+skinparam monochrome true
+skinparam ArrowFontSize 14
+skinparam NoteFontSize 14
+skinparam sequenceGroupFontSize 14
+skinparam sequenceGroupHeaderFontSize 14
+hide footbox
+participant Sampler
+participant Bmp280
+participant RouterI2cBus as Bus
+participant "STM32 / Wire" as MCU
+participant MqttPublisher as Output
+participant Broker
+note over Sampler, Bmp280 : main() initializes before starting the worker
+activate Sampler
+Sampler -> Bmp280 : readForced()
+activate Bmp280
+Bmp280 -> Bus : write forced mode
+Bus -> MCU : write RPC
+MCU -> MCU : Wire write
+MCU --> Bus : result
+Bus --> Bmp280 : bool
+Bmp280 -> Bmp280 : Clock.delayUs()
+Bmp280 -> Bus : read status + data
+Bus -> MCU : read RPC(s)
+MCU -> MCU : Wire burst read
+MCU --> Bus : bytes
+Bus --> Bmp280 : bytes
+Bmp280 -> Bmp280 : compensate()
+Bmp280 --> Sampler : Error + Measurement
+deactivate Bmp280
+alt valid measurement
+ Sampler -> Output : callback / JSON / publish
+ Output -> Broker : queue QoS 0
+ Output --> Sampler : queued / unavailable
+else acquisition failed
+ Sampler -> Sampler : callback reports error
+end
+Sampler -> Sampler : wait / stop
+deactivate Sampler
+note over Bus, MCU
+ MessagePack via arduino-router.
+ provide_safe serves Wire in loop context.
+end note
+@enduml

@@ -1,0 +1,2 @@
+Sending request for method 'prog5_matrix_status', with parameters: [ ]
+Got RPC response: "DEMO T 20.5 C P 1013.8 HPA"

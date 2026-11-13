@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+skinparam monochrome true
+actor Operator
+actor "MQTT broker" as Broker
+actor Subscriber
+rectangle "UNO Q climate station" {
+  usecase "UC-01\nAcquire and inspect\nmeasurement" as Read
+  usecase "UC-02\nPublish readings" as Publish
+  usecase "UC-03\nDiagnose failure" as Diagnose
+  usecase "UC-04\nStop cleanly" as Stop
+}
+Operator --> Read
+Operator --> Publish
+Operator --> Diagnose
+Operator --> Stop
+Publish .> Read : <<include>>
+Broker -- Publish
+Subscriber -- Broker : receives topics from
+note bottom of Read
+  BMP280: temperature and pressure.
+  Both processors are inside UNO Q.
+end note
+@enduml

@@ -1,0 +1,9 @@
+UNO Q NATIVE MQTT TEST — SIMULATED SENSOR; NO SENSOR HARDWARE
+Debian 13 ARM64, native C++ station -> onboard Mosquitto 2.0.21 -> independent mosquitto_sub
+Command: ./build/station --fake --mqtt --host localhost --topic han/ese/prog5-board-check/bmp280/state --seconds 3 --period-ms 200
+Station exit: 0; subscriber exit: 0. Two payloads parsed and validated.
+han/ese/prog5-board-check/bmp280/state {"temperature_c":20.10,"pressure_pa":101325.00}
+han/ese/prog5-board-check/bmp280/state {"temperature_c":20.20,"pressure_pa":101325.00}
+Station diagnostics:
+SIMULATION: FakeSensor, not hardware readings
+Publish unavailable/failed; sample dropped

@@ -1,0 +1,6 @@
+SIMULATION: FakeSensor, not hardware readings
+han/ese/CHANGE-ME/bmp280/state {"temperature_c":20.00,"pressure_pa":101325.00}
+han/ese/CHANGE-ME/bmp280/state {"temperature_c":20.10,"pressure_pa":101325.00}
+han/ese/CHANGE-ME/bmp280/state {"temperature_c":20.20,"pressure_pa":101325.00}
+han/ese/CHANGE-ME/bmp280/state {"temperature_c":20.30,"pressure_pa":101325.00}
+han/ese/CHANGE-ME/bmp280/state {"temperature_c":20.40,"pressure_pa":101325.00}
